@@ -65,9 +65,17 @@ function getTotalCostOfPurchase(productId,quantity,cb){
 
 }
 
-function viewProductsForSale(){
+function viewProductsForSale(obj,cb){
 	queryString = "Select item_id, substring(product_name,1,20)product_name, price, stock_quantity from products where stock_quantity > 0 order by stock_quantity desc";
 	// console.log(queryString);
+	
+	console.log(".");
+	console.log("..")
+	console.log("...")
+
+	console.log("|-----------------------|")
+	console.log("|  Products For Sale    |");
+	console.log("|_______________________|")	
 	connection.query(queryString, function (error, results) {
 		if (error) throw error;
 		console.log("| Product Id | Product Name         | Product Price | Product Quantity");
@@ -77,11 +85,16 @@ function viewProductsForSale(){
 			console.log("| " + results[i].item_id + "         | " + results[i].product_name + "      | " + results[i].price + " | " + results[i].stock_quantity + " |");
 		}
 	});
+	//connection.end();
+	cb();
 }
 
 function viewLowInventory(){
 	queryString = "Select item_id, substring(product_name,1,20)product_name, price, stock_quantity from products where stock_quantity < 5 order by stock_quantity desc";
 	// console.log(queryString);
+	console.log("|-----------------------|")
+	console.log("  Low Inventory   ");
+	console.log("|-----------------------|")	
 	connection.query(queryString, function (error, results) {
 		if (error) throw error;
 		console.log("| Product Id | Product Name         | Product Price | Product Quantity");
@@ -95,7 +108,9 @@ function viewLowInventory(){
 
 
 function addToInventory(){
-	
+	console.log("|-----------------------|")
+	console.log("  Add to Inventory  ");
+	console.log("|-----------------------|")	
 	//prompt user
 	inquirer.prompt([
 		{
@@ -155,7 +170,10 @@ function createNewProduct(){
 	]).then(function(answers){
 		
 		// console.log(answers.id, answers.units);
-		queryString = "Insert into products (item_id, product_name, department_name, price, stock_quantity) values("+")";
+		queryString = `Insert into products (product_name, department_name, price, stock_quantity) 
+						values('`+ answers.name +`','`+ answers.department+`',
+						`+answers.price+`,`+answers.quantity+`)`;
+						// console.log(queryString);
 		connection.query(queryString, function (error, results) {
 			if (error) throw error;
 			console.log("|-----------------------|")
@@ -170,7 +188,12 @@ function createNewProduct(){
 
 
 function managerView(){
-	
+	console.log("|-------------------------------------------------|")
+	console.log("|      W E L L C O M E   TO    B A M A Z O N      |");
+	console.log("|-------------------------------------------------|")
+	console.log("|                 Manager View                    |")
+	console.log("|_________________________________________________|")
+
 	//prompt user
 	inquirer.prompt([
 		{
@@ -182,11 +205,13 @@ function managerView(){
 		
 	]).then(function(answers){
 		
-		console.log(answers.choice);
-
 		switch(answers.choice){
 			case "View Products For Sale":
-				viewProductsForSale();
+				viewProductsForSale(this,function(){
+					connection.end();
+					// console.log("regresa");
+					// managerView();
+				});
 				break;
 			case "View Low Inventory":
 				viewLowInventory();
