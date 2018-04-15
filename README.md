@@ -28,5 +28,5 @@ Then, to run the applicaton run:
 node bamazonCustomer.js 
 
 Watch de Demo
-![](images/readMe/bamazon1.mov)
+[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/BSLyDeJ66YE)
 
