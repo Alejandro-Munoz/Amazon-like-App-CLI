@@ -25,5 +25,7 @@ npm install
 
 Then, to run the applicaton run:
 
-node bamazonCustomer.js you will be presented with a table of all the items currently for sale.
+node bamazonCustomer.js 
+
+Watch de Demo
 
