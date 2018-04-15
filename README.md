@@ -28,5 +28,6 @@ Then, to run the applicaton run:
 node bamazonCustomer.js 
 
 Watch de Demo
+
 [![Watch the video](https://github.com/Alejandro-Munoz/Amazon-like-App-CLI/blob/master/images/readMe/CustomerView.png)](https://youtu.be/BSLyDeJ66YE)
 
