@@ -1,4 +1,4 @@
-# Amazon-like-App-CLI
+# Amazon-like-App
 **Amazon-like storefront with the MySQL**
 
 * The app will take in orders from customers and deplete stock from the store's inventory.
@@ -18,3 +18,12 @@
   * View Product Sales By Department
   * Create New Department
  
+* How do I use it?
+Clone this repository and then run:
+
+npm install
+
+Then, to run the applicaton run:
+
+node bamazonCustomer.js you will be presented with a table of all the items currently for sale.
+
