@@ -28,4 +28,5 @@ Then, to run the applicaton run:
 node bamazonCustomer.js 
 
 Watch de Demo
+![](images/readme/bamazon1.mov)
 
