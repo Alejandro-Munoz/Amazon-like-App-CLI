@@ -18,7 +18,7 @@
   * Create New Department
  
 ### How do I use it?
----
+<hr />
 * Clone this repository and then run:
 
   npm install
