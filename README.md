@@ -18,13 +18,13 @@
   * Create New Department
  
 ### How do I use it?
-Clone this repository and then run:
+* Clone this repository and then run:
 
-npm install
+  npm install
 
-Then, to run the applicaton run:
+* Then, to run the applicaton run:
 
-node bamazonCustomer.js 
+  node bamazonCustomer.js 
 
 Watch de Demo
 
